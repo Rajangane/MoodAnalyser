@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MoodAnalyser;
+using static MoodAnalyser.ConstructorMoodcs;
+using static MoodAnalyser.MoodAnalyserCustomException;
 
 namespace MoodAnalyserTestCase
 {
@@ -21,6 +23,27 @@ namespace MoodAnalyserTestCase
 
             //Assert
             Assert.AreEqual(expected, mood);
+        }
+        [TestMethod]
+        public void Giving_NullMood_Expecting_CustomException_Results()
+        {
+            //Arrange
+            ConstructorMoodcs obj = new ConstructorMoodcs(null);
+            string expected = "Mood should not be NULL";
+
+            try
+            {
+                //Act
+                string actualMsg = obj.AnalyseMood();
+            }
+
+            catch (MoodAnalyserCustomException ex)
+            {
+                //Assert
+                Assert.AreEqual(expected, ex.Message);
+            }
+
+
         }
 
     }
