@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MoodAnalyser;
 using static MoodAnalyser.ConstructorMoodcs;
 using static MoodAnalyser.MoodAnalyserCustomException;
+using static MoodAnalyser.MoodAnalyserFactory;
 
 namespace MoodAnalyserTestCase
 {
@@ -45,6 +46,23 @@ namespace MoodAnalyserTestCase
 
 
         }
+        [TestMethod]
+        public void GivenMoodAnalyserClassName_ShouldReturnMoodAnalyseObject()
+        {
+            //Arrange
+            string message = null;
+            MoodAnalyserFactory expected = new MoodAnalyserFactory(message);
+
+            //Act
+
+            object obj = CreateMoodAnalyser("MoodAnalyser.ConstructorMoodcs", "ConstructorMoodcs");
+            //expected.Equals(obj);
+
+            //Assert
+            Assert.AreNotEqual(expected, obj);
+        }
+
+
 
     }
 }
