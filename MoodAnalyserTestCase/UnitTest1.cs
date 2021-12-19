@@ -61,7 +61,18 @@ namespace MoodAnalyserTestCase
             //Assert
             Assert.AreNotEqual(expected, obj);
         }
+        [TestMethod]
+        public void GivenMoodAnalyseClassName_ShouldReturnMoodAnalyseObject_UsingParameterizedConstructor()
+        {
+            //Arrange
+            object expected = new MoodAnalyserFactory("Happy");
 
+            //Act
+            object obj = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyser.ConstructorMoodcs", "ConstructorMoodcs", "Happy");
+
+            //Assert
+            expected.Equals(obj);
+        }
 
 
     }
