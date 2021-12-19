@@ -6,14 +6,14 @@ namespace MoodAnalyserTestCase
     [TestClass]
     public class UnitTest1
     {
-        ///given sad mood should return SAD
+        ///given Happy mood should return HAPPY
         [TestMethod]
        
         public void GivenSadMoodShouldReturnSad()
         {
             //Arrange
-            string expected = "Sad";
-            string message = " i m in Sad Mood";
+            string expected = "Happy";
+            string message = " i m in Happy Mood";
             CheckMood moodAnlyse = new CheckMood(message);
 
             //Act

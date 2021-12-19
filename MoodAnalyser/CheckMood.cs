@@ -19,14 +19,14 @@ namespace MoodAnalyser
         /// <returns></returns>
         public string AnalyseMood()
         {
-            if (this.message.Contains("Sad"))
+            if (this.message.Contains("Happy"))
             {
-                return "Sad";
+                return "Happy";
 
             }
             else
             {
-                return "Happy";
+                return "Sad";
             }
         }
     }
